@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=div, initial-scale=1.0">
+    <title>id선택자를알아보자</title>
+    <style>
+        /* id1이 적용된 요소에 스타일 지정 */
+        /* 배경색 orange; 글자색 white */
+        #id1{
+            background-color: rgb(0, 241, 72);
+            color: rgb(0, 0, 0);
+        }
+        #id2{
+            background-color: rgb(0, 131, 107);
+            color: rgb(0, 0, 0);
+        }
+
+        .class1 {
+            color: red;
+        }
+        .class2 {
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="id1">
+        div태그;    
+        id 값은 하나의 태그에서만 쓸 수 있다
+    </div>
+    <p id="id2">
+        p태그
+    </p>
+    <div id="id3" class="class1 class2">
+        두번째 div태그
+    </div>
+    <h2 id="id4" class="class2">
+        h2태그
+    </h2>
+</body>
+</html>
