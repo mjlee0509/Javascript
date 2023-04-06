@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        div {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+        }
+        #container1 {
+            border : 5px solid red;
+            position : static;
+        }
+        #container2 {
+            border : 5px solid green;
+            position : relative;
+            top: 30px;
+            left: 10px;
+        }
+        #container3 {
+            border : 5px solid blue;
+            position: relative;
+            top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container1">
+        container1
+    </div>
+    <div id="container2">
+        container2
+    </div>
+    <div id="container3">
+        container3
+    </div>
+</body>
+</html>

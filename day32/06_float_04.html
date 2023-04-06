@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style-type: none;
+            /* 자식요소들에게 float가 적용되었을 때
+               부모 높이가 사리지는 현상이 생김*/
+            /* 이럴 때는 아래와 같은 속성을 줌*/
+            overflow: hidden;
+            background-color: rgb(255, 128, 0);
+        }
+        li {
+            float: left;
+        }
+        li a {
+            /* 한줄에 표현하면서 블록요소 특징 사용
+               블록요소로 지정해줘야 너비-높이 지정 가능*/
+            display: inline-block;
+            padding: 15px 15px;
+            text-align: center;
+            /* a태그에 적용된 밑줄 없애기*/
+            text-decoration: none;
+        }
+        li a:hover {
+            background-color: black;
+            color: rgb(255, 128, 0);
+        }
+
+        .active {
+            background-color: rgb(255, 208, 0);
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="#">🏠HOME</a>
+        </li>
+        <li>
+            <a href="#" class="active">저는요</a>
+        </li>
+        <li>
+            <a href="#">Portpolio</a>
+        </li>
+        <li>
+            <a href="#">Contact me</a>
+        </li>
+    </ul>
+</body>
+</html>
