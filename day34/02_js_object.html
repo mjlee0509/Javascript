@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 자바스크립트 객체
+    const book = {
+        name: "자바스크립트 기초",
+        publisher: "뭐시기출판사",
+        author: "피카츄",
+        price: 20000,
+        index: {
+            ch1: "소개",
+            ch2: "기초문법",
+            ch3: "연산자"
+        },
+        date: "2023년 4월" 
+    }
+    console.log("book type : ", typeof book);
+    // 객체 안에서 특정 변수만 추출하기
+    console.log(book.name)
+    console.log(book.price)
+    console.log(book.index.ch1)
+</script>
+</html>

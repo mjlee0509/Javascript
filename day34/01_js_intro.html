@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    console.log("hello javascript");
+    // 1. 변수 선언
+    var num1 = 10;
+    console.log("num1", num1);
+
+    let num2 = 20;
+    console.log("num2", num2);
+    num2 = 20;
+    console.log("num2", num2);
+    let str1 = "안녕"
+    console.log("str1", str1);
+
+    const num3 = 7;
+    console.log("num3", num3);
+    // num3 = 777;
+    // console.log("num3", num3);
+
+    // 변수값 출력시 백틱(`) 기호 사용
+    console.log(`num3 : ${num3}`);
+
+    let var1 = 10;
+    console.log("var1 타입 : ", typeof var1);
+    var1 = '안녕'
+    console.log("var1 타입 : ", typeof var1);  //!!! 타입이 바뀐다!
+    var1 = true
+    console.log("var1 타입 : ", typeof var1);  //!!! 타입이 바뀐다!
+    var1 = 0.33333333333333
+    console.log("var1 타입 : ", typeof var1);  //!!! 타입이 바뀐다!
+
+    const var2 = 10
+    const var3 = "10"
+    if (var2 == var3) {
+        console.log("둘이 같아요")
+    } else {
+        console.log("둘이 달라요")
+    }
+    if (var2 === var3) {
+        console.log("둘이 같아요")
+    } else {
+        console.log("둘이 달라요")
+    }
+</script>
+</html>

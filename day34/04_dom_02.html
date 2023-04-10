@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="id1">html</h2>
+    <h2 id="id2">javascript</h2>
+    <h2 id="id3">css</h2>
+
+    <h2 class="class1">spring</h2>
+    <h2 class="class1">springboot</h2>
+</body>
+<script>
+    // 1. 모든 h2 요소 가져오기
+    const h2All1 = document.getElementsByTagName("h2");
+    console.log(h2All1);
+    const h2All2 = document.getElementsByTagName("h2");
+    console.log(h2All2);
+    
+    // 2. 모든 h2 요소의 innerText 출력하기
+    for (let i=0; i<h2All1.length; i++) {
+        console.log(h2All1[i].innerText)
+    }
+
+    // 3. id1이 적용된 요소 가져오기
+    const ele1 = document.getElementById("id1"); // M--엘리먼'트'바이아이디
+    const ele2 = document.querySelector("#id1") // <--쿼리셀렉터
+    // 아이디값은 unique하다
+
+    // 4. class1이 적용된 모든 요소 가져오기
+    const ele3 = document.getElementsByClassName("class1"); // <-- 엘리먼'츠'바이클래스'네임'
+    const ele4 = document.querySelectorAll(".class1"); // <-- 쿼리셀렉터'올'
+    // 하지만 class는 여기저기 중복해서 쓸 수 있다.
+
+
+</script>
+</html>

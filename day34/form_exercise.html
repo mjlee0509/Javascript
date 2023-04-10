@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,19 +18,20 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container text-center mt-5">
         <h1>NAVER</h1>
     </div>
     <div id="save_form" class="container">
         <label for="id"><b>아이디</b></label>
-        <input type="text" id="id" name="id" placeholder="@naver.com" class="form-control"/>
+        <input type="text" id="id" name="id" placeholder="@naver.com" class="form-control" />
 
         <label for="password"><b>비밀번호</b></label>
-        <input type="password" id="password" name="member_password" class="form-control"/>
+        <input type="password" id="password" name="member_password" class="form-control" />
 
         <label for="password_confirm"><b>비밀번호 확인</b></label>
-        <input type="password" id="password_confirm" name="member_password" class="form-control"/>
+        <input type="password" id="password_confirm" name="member_password" class="form-control" />
 
         <label for="name">이름</label>
         <input type="text" id="name" name="name" class="form-control" class="form-control" />
@@ -37,7 +39,7 @@
         <label for="birth_year">생년월일</label>
         <div class="row">
             <div class="col">
-                <input type="birth_year" id="year" placeholder="년(4자)" class="form-control"/>
+                <input type="birth_year" id="year" placeholder="년(4자)" class="form-control" />
             </div>
             <div class="col">
                 <select name="birth_month" id="" class="form-select">
@@ -60,8 +62,6 @@
                 <input type="birth_day" id="day" placeholder="일" class="form-control" />
             </div>
         </div>
-
-        <br>
         <label for="gender">성별</label><br>
         <select name="gender" id="gender" class="form-select">
             <option value=" ">성별</option>
@@ -69,43 +69,40 @@
             <option value="female">여자</option>
             <option value="none">선택안함</option>
         </select><br>
-
-        <!-- <br><b>휴대전화</b> -->
         <label for="tel">휴대전화</label>
         <select name="country" id="tel" class="form-select">
             <option value="82">대한민국 +82</option>
             <option value="81">일본 +81</option>
             <option value="86">중국 +86</option>
         </select>
-
         <div class="row g-2"> <!--g-가로로 배치할 요소의 갯수-->
             <div class="col-8"> <!--grid는 한 줄을 12칸으로 나눔-->
-                <input type="text" id="tel" name="tel" placeholder="전화번호 입력" class="form-control"/>
+                <input type="text" id="tel" name="tel" placeholder="전화번호 입력" class="form-control" />
                 <!--onclick 속성 : 속성을 적용한 요소에 click이라는 이벤트가 발생하면
                                 실행할 javascript 함수 또는 문법을 지정함-->
                 <!--버튼을 누르면 hello()라는 함수 호출; 이 함수는 javascript에서 정의-->
             </div>
             <div class="col-4 d-grid"> <!--grid는 한 줄을 12칸으로 나눔-->
-                <input type="button" class="btn btn-success btn-block" value="인증번호 받기" onclick="hello()" >
+                <input type="button" class="btn btn-success btn-block" value="인증번호 받기" onclick="hello()">
             </div>
         </div>
-        <input type="tel_check" id="tel_check" placeholder="인증번호 입력" class="form-control"/><br>
+        <input type="tel_check" id="tel_check" placeholder="인증번호 입력" class="form-control" /><br>
         <div class="row">
             <div class="col d-grid">
                 <input type="submit" class="btn-outline-success btn-block" value="가입하기">
             </div>
         </div>
-        </div>
-        </body>
-        <script>
-            // function hello() {
+    </div>
+</body>
+<script>
+    // function hello() {
 
-            // }
+    // }
 
-            const hello = () => {
-                console.log("콘솔에 보여집니다")
-                alert("alert로 보여집니다")
-            }
-        </script>
-        
-        </html>
+    const hello = () => {
+        console.log("콘솔에 보여집니다")
+        alert("alert로 보여집니다")
+    }
+</script>
+
+</html>
