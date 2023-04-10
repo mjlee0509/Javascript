@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid-3</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;  /*3등분*?
+            /* column-gap: 10px;
+            row-gap: 10px;
+            height: 100px; */
+        }
+
+        .column {
+            height: auto;   /*내용 사이즈만큼 높이 설정*/
+        }
+
+        .div1{
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header" style="background-color: rgb(200, 200, 200);">
+        <h2>header 영역</h2>
+    </div>
+    <div class="container">
+        <div class="column div1" style="background-color: rgb(184, 145, 221);">
+            첫번째 영역
+        </div>
+        <div class="column div2" style="background-color: rgb(244, 176, 210);">
+            두번째 영역
+        </div>
+        <div class="column div3" style="background-color: rgb(235, 208, 208);">
+            세번째 영역
+        </div>
+    </div>
+    <div class="footer" style="background-color: rgb(200, 200, 200);">
+        <h2>footer 영역</h2>
+    </div>
+</body>
+</html>

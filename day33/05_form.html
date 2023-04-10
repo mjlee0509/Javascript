@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script>src="../"</script>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <form action="/login" method="post">
+            <div class="form-floating mb-3">
+                <input type="text" id="email" name="member_email" placeholder="이메일을 입력하세요" class="form-control"/>
+                <label for="email" class="form-label">email</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" id="password" name="member_password" placeholder="비밀번호를 입력하세요" class="form-control"/>
+                <label for="password" class="form-label">password</label>    
+            </div>
+            <input type="submit" value="login" class="btn btn-primary mt-3">
+            <!--form태그 안의 버튼-->
+            <button>버튼버튼</button>
+            <!--form태그 안에 submit 역할을 하지 않는 버튼 만들기-->
+            <input type="button" value="button type">
+    </form>
+</div>
+
+</body>
+</html>

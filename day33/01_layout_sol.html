@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            
+        }
+        body{
+            height: 3000px;
+        }
+
+        .menu{
+            position:sticky;
+            top: 0;
+        }
+
+        ul{
+            /* 목록 기호 없애기 */
+            list-style-type: none;
+            /* 자식요소들에게 float가 적용되어 있을 때는 
+            부모 높이가 사라지는 현상이 생김 이럴땐 아래와 같이 속성을 준다 */
+            overflow: hidden;
+            background-color: rgb(196, 233, 230);
+            
+        }
+        li{
+            /* li 요소를 한줄로 */
+            float: left;
+        }
+        /* 자손 선택자 */
+        li a{
+            /* 한줄에 표현도하고 블록요소 특징도 사용가능
+                블록요소로 지정해놔야 높이 너비 지정이 가능하다 */
+                display: inline-block;
+                padding: 15px 15px;
+                text-align: center;
+            /* a태그에 적용된 밑줄 없애기 */
+            text-decoration: none;
+            color: rgb(10, 48, 105);
+        }
+        li a:hover{
+            background-color: rgb(56, 68, 67);
+            color: rgb(250, 251, 253);
+        }
+        .active{
+            background-color: rgb(177, 207, 205);
+        }
+
+        .container{
+            border: 3px solid #f1f1c6;
+            background-color: #f3f3e6;
+        }
+        h2{
+            text-align: center;
+        }
+        .header{
+            border: 3px solid #f16f6f;
+        }
+        .nav{
+            border: 3px solid #f0b922;
+            float:left;
+            /* 브라우저 가로 사이즈에 따라 비율로 사이즈 결정해줌 
+                --> 퍼센트로 주는 이유 */
+            width: 30%;
+
+        }
+        .section{
+            border: 3px solid #55a05f;
+            float:left;
+            width: 70%;
+        }
+
+        /* footer 하기 전에 float잠시 해제함 */
+        .main::after{
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .footer{
+            border:  3px solid rgb(90, 100, 241);
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#" class =" active">저는요</a>
+            </li>
+            <li>
+                <a href="#">portfolio</a>
+            </li>
+            <li>
+                <a href="#">Contact Me</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h2>header 영역</h2>
+        </div>
+        <div class="main">
+            <div class="nav">
+                <h2>nav 영역</h2>
+            </div>
+            <div class="section">
+                <h2>section 영역</h2>
+            </div>
+        </div>
+        <div class="footer">
+            <h2>footer 영역</h2>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 3000px;
+        }
+
+        .menu {
+            position: sticky;
+            top: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            /* 자식요소들에게 float가 적용되었을 때
+               부모 높이가 사리지는 현상이 생김*/
+            /* 이럴 때는 아래와 같은 속성을 줌*/
+            overflow: hidden;
+            background-color: rgb(32, 32, 32);
+            color: rgb(255, 255, 255);
+        }
+        li {
+            float: left;
+        }
+        li a {
+            /* 한줄에 표현하면서 블록요소 특징 사용
+               블록요소로 지정해줘야 너비-높이 지정 가능*/
+            display: inline-block;
+            padding: 15px 15px;
+            text-align: center;
+            /* a태그에 적용된 밑줄 없애기*/
+            text-decoration: none;
+        }
+        li a:hover {
+            background-color: orangered;
+            color: rgb(0, 0, 0);
+        }
+
+        .active {
+            background-color: rgb(180, 180, 180);
+        }
+
+
+        .container {
+            border: 3px solid rgb(180, 180, 180);
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+        }
+        
+        h2 {
+            text-align: center;
+        }
+
+        .header {
+            border: 1px dotted rgb(180, 180, 180);
+        }
+
+        .nav {
+            border: 1px dotted rgb(180, 180, 180);
+            float: left;
+            width: 30%;
+        }
+
+        .section {
+            border: 1px dotted rgb(180, 180, 180);
+            float: left;
+            width: 70%;
+        }
+
+        .main::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .footer {
+            border: 1px dotted rgb(180, 180, 180);
+
+        }
+
+        @media (max-width: 800px) {
+            .nav {
+                width: 100%;
+            }
+            .section {
+                width: 100%;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li>
+                <a href="#">🏠HOME</a>
+            </li>
+            <li>
+                <a href="#" class="active">저는요</a>
+            </li>
+            <li>
+                <a href="#">Portpolio</a>
+            </li>
+            <li>
+                <a href="#">Contact me</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h2>header 영역</h2>
+        </div>
+        <div class="main">
+            <div class="nav">
+                <h2>nav 영역</h2>
+            </div>
+            <div class="section">
+                <h2>section 영역</h2>
+            </div>
+        </div>
+        <div class="footer">
+            <h2>footer 영역</h2>
+        </div>
+    </div>
+</body>
+</html>
