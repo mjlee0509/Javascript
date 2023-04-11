@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <button onclick="fun1()" class="btn-outline-primary">이문정의 우당탕탕 구구단</button><br>
+    <button onclick="fun2_1()" class="btn-outline-primary">교수님의 싱글벙글 구구단 (1안)</button>
+    <button onclick="fun2_2()" class="btn-outline-primary">교수님의 싱글벙글 구구단 (2안)</button>
+    <div id="id1">
+
+    </div>
+</body>
+<script>
+    fun1 = () => {
+        const table = document.createElement("table")
+        const tbody = document.createElement("tbody")
+
+        table.appendChild(tbody)
+        // console.log(table)
+        // console.log(tbody)
+        for (let dan=2; dan<=9; dan++) {
+            const tr = document.createElement("tr")
+            tbody.appendChild(tr)
+            // console.log(tr)
+            const tdan = document.createElement("th")
+            tdan.appendChild(document.createTextNode(dan + "단"))
+            tr.appendChild(tdan)
+            // console.log(tdan)
+            for (let n=1; n<=9; n++) {
+                const td = document.createElement("td")
+                td.appendChild(document.createTextNode(dan * n))
+                tr.appendChild(td)
+                // console.log(td)
+            }
+        }
+        document.getElementById("id1").appendChild(table)
+        // class 추가 1안
+        // table.classList.add('table', 'table-hover')
+        // class 추가 1안
+        table.setAttribute('class', 'table table-hover')
+        
+    }
+
+    fun2_1 = () => {
+        const result = document.getElementById("id1");
+
+        let tableElement = "<table>";
+        for (let i = 2; i <= 9; i++) {
+            tableElement += "<tr>";
+            tableElement += "<td>" + i + "단</td>";
+            for (let j = 1; j <= 9; j++) {
+                tableElement += "<td>" + i * j + "</td>";
+            }
+        tableElement += "</tr>";
+        }
+        tableElement += "</table>";
+        result.innerHTML = tableElement;
+    }
+
+    fun2_2 = () => {
+        const table = document.createElement("table");
+        for (let i = 2; i <= 9; i++) {
+            const tr = document.createElement("tr");
+            let td = document.createElement("td");
+            td.appendChild(document.createTextNode(i+"단"));
+            tr.appendChild(td);
+            for (let j = 1; j <= 9; j++) {
+                td = document.createElement("td");
+                td.appendChild(document.createTextNode(i*j));
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+        result.appendChild(table);
+    }
+
+
+</script>
+</html>

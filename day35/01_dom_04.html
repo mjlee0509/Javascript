@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../images/개구리.jpg" alt="" id="img1">
+    <button onclick="changeImg()">이 개구리에게 슬픈 이야기를 들려주세요</button>
+</body>
+<script>
+    const changeImg = () => {
+        const img = document.getElementById("img1")
+        console.log(img1)
+        console.log(img.src)
+        // src 값을 변경시켜줘야 함
+        img.src = "../images/우는개구리2.jpg"
+    }
+</script>
+</html>

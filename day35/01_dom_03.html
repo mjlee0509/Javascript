@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>오늘은 4월 11일 화요일</h2>
+    <h3>오늘은 35일차</h3>
+    <div id="id1"></div>
+    <div id="id2">
+
+    </div>
+    <!--
+        1.  button 클릭시 fun1() 함수를 호출하고 
+            h2 태그의 innerText 값을 콘솔에 출력
+        
+        2.  button 클릭시 fun2() 함수를 호출하고
+            innerHTML값을 alert로 출력
+
+        3.  button 클릭시 fun3() 함수를 호출하고
+            h2, h3 태그의 innerText값을 id가 적용된 div의
+            innerText값으로 적용하여 화면에 띄워라
+
+        4.  button 클릭시 fun4() 함수를 호출하고 
+            id2가 적용된 div에 ex와 같이 li로 1부터 100까지 출력하라
+            (단, ul과 li는 script 부분에서 만들어라)
+    -->
+
+    <!--
+    <input type="button" value="버튼1" onclick="fun1()">
+    <input type="button" value="버튼2" onclick="fun2()">
+    <input type="button" value="버튼3" onclick="fun3()">
+    -->
+
+    <button onclick="fun1()">버튼1</button>
+    <button onclick="fun2()">버튼2</button>
+    <button onclick="fun3()">버튼3</button>
+    <button onclick="fun4()">버튼4</button>
+    <br><button onclick="fun4_1()">버튼4-1</button>
+
+    <!--
+    <div id="ex">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            중간생략
+            <li>100</li>
+        </ul>
+    </div>
+    -->
+
+</body>
+<script>
+    // const button1 = document.getElementsByTagName("h2")
+        /*  변수가 계속 바뀌어야 하는 상황에서는 전역변수보다는
+            함수 안에서 변수 처리를 해주도록 합시다 */
+    fun1 = () => {
+        const button1 = document.getElementsByTagName("h2")
+        console.log(button1[0].innerText)
+    }
+
+    // const button2 = document.getElementsByTagName("h3")
+    fun2 = () => {
+        const button2 = document.getElementsByTagName("h3")
+        alert(button2[0].innerText)
+    }
+    
+    /* let button3 = document.getElementById("id1");
+    button3[0].innerText = "이 내용이 화면에 보입니다."; */
+    fun3 = () => {
+        // 1) h2와 h3을 가져온다
+        const ele1 = document.getElementsByTagName("h2")[0].innerText
+        const ele2 = document.getElementsByTagName("h3")[0].innerText
+        // 2) id1을 가져온다
+        const button3 = document.getElementById("id1")
+        // 3) id1의 text를 설정해준다
+        button3.innerText = ele1 + "\n" + ele2
+    }
+    
+    // 4-0) 가장 직관적인 방법
+    fun4 = () => {
+        // 1) id2가 적용된 요소를 가져온다
+        const div = document.getElementById("id2")
+        // 2) ...?
+        let ul = "<ul>"
+        for (let i=1; i<=100; i++) {
+            // 왜 대입연산자를 써야할까요?
+            /* 왜인지는 모르겠으나 =만 쓰면 100만 뜨네요 */
+            ul += "<li>" + i + "</li>"   
+        }
+        ul += "</ul>"
+        div.innerHTML = ul
+    }
+
+    // 4-1) Javascript method 활용하기
+    fun4_1 = () => {
+        /* 
+        const ul = document.createElement("ul")
+        for(let i=0; i<100; i++) {
+            const li = document.createElement("li")
+            li.textContent = isSecureContext
+        */
+
+        // 1) ul 만들기
+        const ul = document.createElement("ul")
+        for (let i=1; i<=100; i++) {
+            // 2) li 만들기 
+            const li = document.createElement("li")
+            // 3) 시작태그-종료태그 사이에 i로 만들어진 숫자 텍스트 만들기
+                li.appendChild(document.createTextNode(i))
+            // 4) 이 li은 ul의 자식이다
+            ul.appendChild(li)
+        }
+        // 5) 그리고 이 ul은 div의 자식이다
+        document.getElementById("id2").appendChild(ul)
+    }
+  
+
+</script>
+</html>
