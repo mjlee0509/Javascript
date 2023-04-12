@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    JAVA : <input type="text" id="id1" name="id1"> <br>
+    HTML : <input type="text" id="id2" name="id2"> <br>
+    Grade : <input type="text" id="result" name="result" placeholder="당신의 학점은?"> <br>
+    <input type="button" value="Submit" onclick="fun1()"> <br>
+    <h2 id="printGrade" name="printGrade">
+        <!-- 당신의 학점은
+        <span id="print"></span>
+        입니다! -->
+    </h2>
+</body>
+<script>
+    const fun1 = () => {
+        num1 = document.getElementById("id1")
+        console.log(num1.value)
+        num2 = document.getElementById("id2")
+        console.log(num2.value)
+        const result = (parseInt(num1.value) + parseInt(num2.value)) / 2
+        console.log(result)
+        document.getElementById("result").value = result
+
+        if (result >= 90) {
+            document.getElementById("result").value  = "A"
+        }
+        else if (result >= 80) {
+            document.getElementById("result").value  = "B"
+        }
+        else if (result >= 70) {
+            document.getElementById("result").value  = "C"
+        }
+        else if (result >= 60) {
+            document.getElementById("result").value  = "D"
+        }
+        else {
+            document.getElementById("result").value  = "F"
+        }
+
+        printGrade.innerHTML = "당신의 학점은 " + document.getElementById("result") + "입니다."
+    }
+</script>
+</html >

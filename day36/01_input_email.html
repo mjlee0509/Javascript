@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <label for="email">이메일</label>
+    <input type="text" id="email" name="email" class="form-control" onblur="email_check()">
+    <h6 id="lengthCheck"></h6>
+</body>
+<script>
+    fun = () => {
+        let email = document.getElementById("email").value.length
+        console.log(email)
+        let emailCheck = ""
+        if (email = 0) {
+            emaillCheck = "필수입력입니다."
+            // emailCheck.style.color = "red"
+            console.log(emailCheck)
+        } else if (email < 5 && email > 20) {
+            emailCheck = "5~20자로 입력해주세요"
+            // emailCheck.style.color = "red"
+            console.log(emailCheck)
+        } else {
+            emailCheck = "사용 가능한 ID입니다!"
+            // emailCheck.style.color = "blue"
+            console.log(emailCheck)
+        }
+        document.getElementById("lengthCheck").innerText = emailCheck
+    }
+    email_check = () => {
+        // 오답노트 1. 
+        // 오답노트 2. 오타 (lengthCheck부분)
+        // 오답노트 3. innerHTML
+        // 오답노트 4. 마지막 조건식
+        let email = document.getElementById("email").value
+        const lengthCheck = document.getElementById("lengthCheck")
+        if (email.length == 0) {
+            lengthCheck.innerHTML = "필수입력입니다"
+            lengthCheck.style.color = "red"
+        } else if (email.length < 5 || email.length > 20) {
+            lengthCheck.innerHTML = "5~20자로 입력해주세요"
+            lengthCheck.style.color = "red"
+        } else if (email.length >= 5 && email.length <= 20){
+            lengthCheck.innerHTML = "사용 가능한 이메일입니다"
+            lengthCheck.style.color = "blue"
+        }
+    }
+</script>
+</html>

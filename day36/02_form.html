@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+    <!-- onsubmit : 
+        - form에서 작성한 정보를 제출할 떄 호출할 함수 return을 작성
+        - 함수 호출 결과가 true, false인지에 따라 제출 여부 제어
+    -->
+    <form action="#" name="loginForm" method="post" onsubmit="return login_check()">
+        email : <input type="text" name="memberEmail" id="member-email"> <br>
+        <h6 id="lengthCheck"></h6>
+        password : <input type="text" name = "memberPassword" id="member-password"> <br>
+        <h6 id="password-check-alert"></h6>
+        <input type="submit" value="login">
+    </form>
+</body>
+<script>
+    const login_check = () => {
+        // email, password 둘 중 하나라도 입력되지 않으면 submit을 하지 않는다.
+        // 입력되지 않은 항목에 focus를 준다.
+        const email = document.getElementById("member-email");
+        const password = document.getElementById("member-password");
+        // if (email.value.length == 0) {
+        // if (document.loginForm.memberEmail.value.length == 0) {
+        if (!email_check()) {
+            // 여기서 일단 이메일 입력란에 focus를 줘볼까?
+            email.focus();
+            return false;
+        } else if(!password_check()) {
+            password.focus();
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    email_check = () => {
+            let email = document.getElementById("member-email").value
+            const lengthCheck = document.getElementById("lengthCheck")
+            if (email.length == 0) {
+                lengthCheck.innerHTML = "필수입력입니다"
+                lengthCheck.style.color = "red"
+                return false
+            } else if (email.length < 5 || email.length > 20) {
+                lengthCheck.innerHTML = "5~20자로 입력해주세요"
+                lengthCheck.style.color = "red"
+                return false
+            } else if (email.length >= 5 && email.length <= 20){
+                lengthCheck.innerHTML = "사용 가능한 이메일입니다"
+                lengthCheck.style.color = "blue"
+                return true
+            }
+    }
+
+    password_check = () => {
+        let password = document.getElementById("member-password").value
+        const passwordAlert = document.getElementById("password-check-alert")
+        // const lock1 = document.getElementById("lock1")
+        if (password.length == 0) {
+            passwordAlert.innerHTML = "필수입력입니다."
+            passwordAlert.style.color = "red"
+            return false
+            // lock1.style.color = "red"
+        } else if (password.length < 6 || password.length > 18) {
+            passwordAlert.innerHTML = "6~18자 이내로 입력하세요"
+            passwordAlert.style.color = "red"
+            return false
+            // lock1.style.color = "red"
+        } else if (password.length >= 6 && password.length <= 18) {
+            passwordAlert.innerHTML = "사용 가능한 비밀번호입니다"
+            passwordAlert.style.color = "green"
+            return true
+            // lock1.style.color = "green"
+        }
+    }
+
+
+
+</script>
+</html>

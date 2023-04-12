@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h6>이메일</h6>
+    <input type="text" id="email-value" name="emailValue"> <span>@</span>
+    <input type="text" id="email-domain" name="emailDomain">
+    <select id="email-domain-select" onchange="domain_select()">
+        <option value="">직접입력</option>
+        <option value="naver.com">네이버</option>
+        <option value="gmail.com">구글</option>
+        <option value="daum.net">다음</option>
+    </select>
+</body>
+<script>
+    const domain_select = () => {
+        const domain = document.getElementById("email-domain-select")
+        console.log(domain.value)
+        const domainInput = document.getElementById("email-domain")
+        domainInput.value = domain.value
+    }
+</script>
+</html>

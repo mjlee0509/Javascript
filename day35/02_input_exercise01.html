@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Number1 : <input type="text" id="id1" name="id1" > <br>
+    Number2 : <input type="text" id="id2" name="id2" > <br>
+    Result : <input type="text" id="result" name="result"> <br>
+    <input type="button" value="Submit" onclick="fun1()"> <br>
+</body>
+<script>
+    const fun1 = () => {
+        const num1 = document.getElementById("id1")
+        console.log(num1.value)
+        const num2 = document.getElementById("id2")
+        console.log(num2.value)
+        const result = parseInt(num1.value)
+                          + parseInt(num2.value)
+        console.log(result)
+        document.getElementById("result").value = result
+    }
+
+</script>
+</html>
